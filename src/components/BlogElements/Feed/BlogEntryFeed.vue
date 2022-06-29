@@ -1,19 +1,7 @@
-<template>
-    <div>
-        
-    </div>
-</template>
-
-<script>
-import { defineComponent } from '@vue/composition-api'
-
-export default defineComponent({
-    setup() {
-        
-    },
-})
+<script setup lang="ts">
+//import TheWelcome from '@/components/TheWelcome.vue'
 </script>
 
-<style lang="">
+<template>
     
-</style>
+</template>
