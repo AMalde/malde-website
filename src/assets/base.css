@@ -17,7 +17,9 @@
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
-  --vt-c-text-black-1: rgba(23, 23, 23, 1);
+  --vt-c-text-black-900: rgba(23, 23, 23, 1);
+  --vt-c-text-black-700: rgba(43, 43, 43, 1);
+
 }
 
 /* semantic color variables for this project */
@@ -29,7 +31,8 @@
 
   --color-heading: var(--vt-c-text-light-1);
   --color-text: var(--vt-c-text-light-1);
-  --color-text-black: var(--vt-c-text-black-1);
+  --color-text-black: var(--vt-c-text-black-900);
+  --color-text-black-700: var(--vt-c-text-black-700);
 
   --section-gap: 160px;
 }
@@ -104,6 +107,7 @@ body {
 
 .wrapper {
     max-width: 960px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -111,7 +115,7 @@ body {
 
 .title-bold {
   font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
+  font-weight: 900;
   font-size: 32px;  
 }
 
@@ -120,13 +124,17 @@ body {
   font-size: 28px;
 }
 
+.light-theme {
+  color: var(--color-text-black);
+}
+
 h1 {
   font-size: var(--font-size-large);
   line-height: 1.5;
 }
 
 h3 {
-
+  font-size: 28px;
 }
 
 p {

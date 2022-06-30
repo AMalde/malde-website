@@ -10,7 +10,7 @@ import { RouterLink, RouterView } from 'vue-router'
     <div class="wrapper">
       <nav>
         <div class="left-navigation-section">
-          <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+          <img alt="Vue logo" class="logo" src="@/assets/img/logo.png" width="125" height="125" />
           <RouterLink to="/thoughts">Thoughts</RouterLink>
           <RouterLink to="/design">Design</RouterLink>
         </div>
@@ -55,7 +55,8 @@ header {
 
 .logo {
   display: block;
-  margin: 0 auto 2rem;
+  height: 40px;
+  width: auto;
 }
 
 a,
@@ -81,6 +82,7 @@ nav {
   grid-template-columns: 1fr 1fr;
   padding: 0 2rem;
   padding-top: var(--margin-large);
+
 }
 nav .left-navigation-section {
   display: flex;
@@ -89,7 +91,7 @@ nav .left-navigation-section {
 }
 
 nav a.router-link-exact-active {
-  color: var(--color-text);
+  color: var(--color-text-black);
 }
 
 nav a.router-link-exact-active:hover {
@@ -99,10 +101,10 @@ nav a.router-link-exact-active:hover {
 nav a {
   display: inline-block;
   padding: 0 1rem;
-}
-
-nav a:first-of-type {
-  border: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 18px; 
+  color: var(--color-text-black); 
 }
 
 @media (min-width: 1024px) {
@@ -110,12 +112,6 @@ nav a:first-of-type {
     display: flex;
     place-items: center;
     width: 100%;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
   }
 
   .logo {
