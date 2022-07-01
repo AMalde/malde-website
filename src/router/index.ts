@@ -3,6 +3,11 @@ import HomeView from '../views/HomeView.vue'
 import ThoughtsView from '../views/ThoughtsView.vue'
 import DesignView from '../views/DesignView.vue'
 
+
+//Admin stuff
+import AdminView from '../views/Admin/Index.vue'
+import AdminBlogView from '../views/Admin/Blog/Index.vue'
+
 import BlogPost from '../components/BlogElements/BlogEntry.vue'
 
 const router = createRouter({
@@ -27,6 +32,11 @@ const router = createRouter({
       path: '/design',
       name: 'design',
       component: DesignView
+    }, 
+    {
+      path: '/admin',
+      name: 'admin',
+      component: AdminView
     }
   ]
 })

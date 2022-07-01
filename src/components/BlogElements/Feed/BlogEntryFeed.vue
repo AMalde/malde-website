@@ -1,26 +1,46 @@
-<script setup lang="ts">
+<script setup>
+    import { reactive } from 'vue'
+    import BlogEntryFeedItem from './BlogEntryFeedItem.vue'
+
+        const data = reactive({
+            posts: [{
+                title: "this is the title of the blog post 1", 
+                content: "this is the content of the blog post",
+                tags: ["tag1", "tag2", "tag3"] 
+            },
+            {
+                title: "this is the title of the blog post 2", 
+                content: "this is the content of the blog post",
+                tags: ["tag1", "tag2", "tag3"] 
+            },
+            {
+                title: "this is the title of the blog post 3", 
+                content: "this is the content of the blog post",
+                tags: ["tag1", "tag2", "tag3"] 
+            }]
+        })
 
 </script>
 
 <template>
-    <div class="blog-post-feed-item">
-        <div class="blog-post-feed-item_header">
-            <router-link :to="'/thoughts/1'">
-            <h3 class="title title-bold dark-text">
-                Title of the Blog Post
-            </h3>
-            </router-link>
-        </div>
-        <div class="blog-post-feed-item_body">
-            <p class="description description_regular">
-                There isnt much to say yet, but usually I dont have that much to say anyway. I like to design things, think about har things, and solv problems that I think are worth solving. Something more and more than that. Yeah I’m just so fucking special learn from me and such and such.
-            </p>
-        </div>
-        <div class="blog-post-feed-item_footer">
-            <p class="extra-info">
-                something 
-            </p>
+    <div class="blog-feed">
+        <div v-for="post in data.posts" :key="post.title">
+
+            <BlogEntryFeedItem 
+                :title="post.title"
+                :content="post.content"
+                :tags="post.tags"
+            />
+            
         </div>
     </div>
     
 </template>
+
+<style scoped>
+    .blog-feed {
+        width: 100%;
+        height: 400px;
+        color: black; 
+    }
+</style>

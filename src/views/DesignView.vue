@@ -3,11 +3,13 @@
 </script>
 
 <template>
-  <div class="about">
-      <div class="wrapper">
-          <h1>Design page</h1>
-      </div>
-    
+  <div class="wrapper">
+      <section class="page-description">
+        <h1>
+          Most of the things I have done are spread around on the internet. I’m working on getting everything stored in one place
+        </h1>
+        
+    </section>
   </div>
 </template>
 
