@@ -1,5 +1,30 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+<script lang="ts">
+  import { defineComponent, onMounted, ref } from 'vue'
+  import { RouterLink, RouterView } from 'vue-router'
+  import app from './Services/firebase'
+
+  export default defineComponent ({
+        name: 'board',
+        setup() {
+            // https://composition-api.vuejs.org/api.html#template-refs
+            const canvasRef = ref<HTMLCanvasElement | null>(null)
+            const width: number = 100
+            const height: number = 100
+            // convert width and height to ref also if reactive
+
+            onMounted(() => {
+                console.log(canvasRef.value) // canvas
+
+                //testing if firebase is present
+                console.log(app)
+            })
+
+            return {
+                canvasRef,
+                width,
+            }
+        }
+    })
 </script>
 
 <template>
@@ -7,10 +32,19 @@ import { RouterLink, RouterView } from 'vue-router'
 
   
   <header>
+
+    <canvas 
+      ref="canvasRef" 
+      class="canvas-background"
+      :width="width" :height="height" tabindex='0'
+    ></canvas>
+
     <div class="wrapper">
       <nav>
         <div class="left-navigation-section">
-          <img alt="Vue logo" class="logo" src="@/assets/img/logo.png" width="125" height="125" />
+          <router-link :to="'/'">
+            <img alt="Vue logo" class="logo" src="@/assets/img/logo.png" width="125" height="125" />
+          </router-link>
           <RouterLink to="/thoughts">Thoughts</RouterLink>
           <RouterLink to="/design">Design</RouterLink>
         </div>
@@ -33,12 +67,12 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style>
-@import '@/assets/base.css';
+@import '@/assets/css/base.css';
 
 footer {
   width: 100%;
   min-height: 200px;
-  background: blue;  
+  background: black;  
 }
 
 #app {
@@ -55,7 +89,7 @@ header {
 
 .logo {
   display: block;
-  height: 40px;
+  height: 30px;
   width: auto;
 }
 
@@ -127,4 +161,14 @@ nav a {
     
   }
 }
+
+.canvas-background {
+  position: absolute;
+  left: 0; 
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;    
+}
 </style>
+

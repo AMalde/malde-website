@@ -1,6 +1,4 @@
-<script setup lang="ts">
-//import TheWelcome from '@/components/TheWelcome.vue'
-</script>
+
 
 <template>
   <main>
@@ -8,9 +6,9 @@
     <div class="wrapper">
       <section class="page-description">
           <h1>
-            I <a href="/thoughts"><b class="bold-text">write</b></a> to make sense of the world, 
-            and <a href="/design"><b class="bold-text">design</b></a> to try to make it better. 
-            Occationaly I <a href="/podcast"><b class="bold-text">interview</b></a> really smart and interesting people.
+            I <router-link :to="'/thoughts'"><b class="bold-text">write</b></router-link> to make sense of the world, 
+            and <router-link :to="'/design'"><b class="bold-text">design</b></router-link> to try to make it better. 
+            Occationaly I <router-link :to="'/podcast'"><b class="bold-text">interview</b></router-link> really smart and interesting people. <b class="bold-text">This page is currently being built.</b>
           </h1>
         </section>
 
@@ -34,6 +32,10 @@
               </p>
             </div>
           </div>
+
+          <button class="secondary-button centered">
+            See More
+          </button>
         </section>
       </div>
   </main>
@@ -98,6 +100,11 @@
     font-weight: 900;
     color: var(--color-text-black-900);
     cursor: pointer;
+  }
+
+  .blog-post-feed-items
+  .secondary-button {
+    margin-top: var(--margin-medium);
   }
 
 

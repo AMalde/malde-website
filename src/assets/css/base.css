@@ -52,6 +52,7 @@
 
 :root {
   --padding-32: 32px;
+  --margin-medium: 64px; 
   --margin-large: 128px;
 }
 
@@ -139,4 +140,32 @@ h3 {
 
 p {
 
+}
+
+/*
+  BUTTONS
+*/
+
+.secondary-button {
+  max-width: 95%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 32px;
+  padding-right: 32px;  
+  
+  border-radius: 100px;
+  border: solid 0.5px rgb(23,23,23);
+  background: none; 
+  color: black; 
+  font-size: 24px; 
+
+}
+
+.secondary-button:hover {
+  cursor: pointer;
+}
+
+.centered {
+  margin: 0 auto;
+  display: block;
 }
