@@ -3,14 +3,15 @@
     const props = defineProps([
         'title', 
         'content', 
-        'tags'
+        'tags',
+        'id'
     ])
 </script>
 
 <template>
     <div class="blog-post-feed-item">
         <div class="blog-post-feed-item_header">
-            <router-link :to="'/thoughts/1'">
+            <router-link :to="`/thoughts/${id}`">
             <h3 class="title title-bold dark-text">
                 {{props.title}}
             </h3>
@@ -23,9 +24,14 @@
         </div>
         <div class="blog-post-feed-item_footer" v-for= "tag in props.tags" :key="tag">
             <p class="extra-info">
-                {{props.tags}}
             </p>
         </div>
     </div>
     
 </template>
+
+<style scoped>
+    .blog-post-feed-item {
+        margin-top: var(--margin-medium);
+    }
+</style>

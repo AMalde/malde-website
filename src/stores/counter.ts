@@ -14,3 +14,9 @@ export const useCounterStore = defineStore({
     }
   }
 })
+
+
+
+//all blog entries
+//all designs
+//all tweets and other social media stuff

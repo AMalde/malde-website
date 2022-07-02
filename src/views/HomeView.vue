@@ -17,11 +17,10 @@
 
         <section class="blog-post-feed-items light-theme">
           <BlogEntryFeed />
-
-          <button class="secondary-button centered">
+        </section>
+        <button class="secondary-button centered">
             See More
           </button>
-        </section>
       </div>
   </main>
 </template>
